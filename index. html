@@ -1,1680 +1,1069 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Aneka Pervez | Digital Marketing Specialist Portfolio</title>
-
-  <meta
-    name="description"
-    content="Aneka Pervez - Digital Marketing Specialist specializing in Social Media, Meta Ads, Shopify, Email Marketing, Brevo, Canva and Content Strategy."
-  >
-
-  <style>
-    :root {
-      --navy: #0f172a;
-      --navy-2: #111c33;
-      --teal: #14b8a6;
-      --teal-light: #5eead4;
-      --white: #ffffff;
-      --text: #e2e8f0;
-      --muted: #94a3b8;
-      --border: rgba(255,255,255,0.12);
-      --card: rgba(255,255,255,0.055);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Inter, Arial, Helvetica, sans-serif;
-      background: var(--navy);
-      color: var(--white);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1120px, 92%);
-      margin: auto;
-    }
-
-    /* NAVIGATION */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(15,23,42,0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    nav {
-      min-height: 72px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: 800;
-    }
-
-    .logo span {
-      color: var(--teal);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: #cbd5e1;
-      font-size: 14px;
-      transition: 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--teal-light);
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      position: relative;
-      padding: 80px 0;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 420px;
-      height: 420px;
-      border-radius: 50%;
-      background: rgba(20,184,166,0.08);
-      right: -160px;
-      top: 60px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 50px;
-      align-items: center;
-      position: relative;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 8px 15px;
-      border-radius: 50px;
-      color: var(--teal-light);
-      background: rgba(20,184,166,0.08);
-      border: 1px solid rgba(20,184,166,0.35);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      margin-bottom: 22px;
-    }
-
-    .hero h1 {
-      font-size: clamp(45px, 7vw, 76px);
-      line-height: 0.98;
-      letter-spacing: -3px;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      color: var(--teal);
-    }
-
-    .hero h2 {
-      color: #cbd5e1;
-      font-size: clamp(18px, 3vw, 27px);
-      font-weight: 500;
-      margin-bottom: 18px;
-    }
-
-    .hero-description {
-      color: var(--muted);
-      font-size: 16px;
-      max-width: 680px;
-      margin-bottom: 28px;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 20px;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 700;
-      transition: 0.3s;
-    }
-
-    .btn-primary {
-      background: var(--teal);
-      color: var(--navy);
-    }
-
-    .btn-primary:hover {
-      background: var(--teal-light);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      color: white;
-    }
-
-    .btn-outline:hover {
-      border-color: var(--teal);
-      color: var(--teal-light);
-    }
-
-    /* DIGITAL MARKETING DIAGRAM */
-
-    .diagram {
-      position: relative;
-      min-height: 470px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .diagram::before {
-      content: "";
-      position: absolute;
-      width: 320px;
-      height: 320px;
-      border: 1px solid rgba(20,184,166,0.15);
-      border-radius: 50%;
-    }
-
-    .diagram::after {
-      content: "";
-      position: absolute;
-      width: 240px;
-      height: 240px;
-      border: 1px dashed rgba(94,234,212,0.16);
-      border-radius: 50%;
-    }
-
-    .center-node {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: var(--teal);
-      color: var(--navy);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-weight: 900;
-      font-size: 17px;
-      line-height: 1.2;
-      box-shadow: 0 0 0 12px rgba(20,184,166,0.07);
-      z-index: 3;
-    }
-
-    .node {
-      position: absolute;
-      width: 112px;
-      min-height: 72px;
-      padding: 13px 8px;
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      background: var(--card);
-      backdrop-filter: blur(8px);
-      color: #e2e8f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 12px;
-      font-weight: 700;
-      z-index: 4;
-    }
-
-    .node-1 {
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .node-2 {
-      top: 105px;
-      right: 5px;
-    }
-
-    .node-3 {
-      bottom: 105px;
-      right: 5px;
-    }
-
-    .node-4 {
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .node-5 {
-      bottom: 105px;
-      left: 5px;
-    }
-
-    .node-6 {
-      top: 105px;
-      left: 5px;
-    }
-
-    /* SECTIONS */
-
-    section {
-      padding: 90px 0;
-    }
-
-    .section-heading {
-      margin-bottom: 40px;
-    }
-
-    .section-heading small {
-      color: var(--teal);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 800;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(30px,5vw,46px);
-      line-height: 1.1;
-      margin-top: 8px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      max-width: 700px;
-      margin-top: 12px;
-    }
-
-    /* ABOUT */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .about-card {
-      padding: 30px;
-      border-radius: 20px;
-      background: var(--card);
-      border: 1px solid var(--border);
-    }
-
-    .about-card p {
-      color: #cbd5e1;
-      margin-bottom: 14px;
-    }
-
-    .highlight {
-      color: var(--teal-light);
-      font-weight: 700;
-    }
-
-    /* EXPERIENCE */
-
-    .experience-card {
-      display: grid;
-      grid-template-columns: 190px 1fr;
-      gap: 30px;
-      padding: 32px;
-      border-radius: 20px;
-      background: var(--card);
-      border: 1px solid var(--border);
-    }
-
-    .experience-number {
-      color: var(--teal);
-      font-size: 52px;
-      line-height: 1;
-      font-weight: 900;
-    }
-
-    .experience-card h3 {
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
-
-    .experience-card p {
-      color: var(--muted);
-    }
-
-    /* SKILLS */
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 18px;
-    }
-
-    .skill-card {
-      padding: 25px;
-      border-radius: 17px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      transition: 0.3s;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(20,184,166,0.5);
-    }
-
-    .skill-card h3 {
-      color: var(--teal-light);
-      font-size: 18px;
-      margin-bottom: 9px;
-    }
-
-    .skill-card p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* PROJECTS */
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      gap: 24px;
-    }
-
-    .project-card {
-      padding: 30px;
-      border-radius: 20px;
-      background: var(--card);
-      border: 1px solid var(--border);
-    }
-
-    .project-card.featured {
-      border-color: rgba(20,184,166,0.5);
-    }
-
-    .project-label {
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 30px;
-      background: rgba(20,184,166,0.1);
-      color: var(--teal-light);
-      font-size: 10px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
-    }
-
-    .project-card h3 {
-      font-size: 28px;
-      margin-bottom: 5px;
-    }
-
-    .project-card h4 {
-      color: #cbd5e1;
-      font-weight: 500;
-      margin-bottom: 15px;
-    }
-
-    .project-card > p {
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .project-list {
-      list-style: none;
-      margin-bottom: 22px;
-    }
-
-    .project-list li {
-      color: #cbd5e1;
-      font-size: 14px;
-      margin: 7px 0;
-    }
-
-    .project-list li::before {
-      content: "✓";
-      color: var(--teal);
-      font-weight: bold;
-      margin-right: 9px;
-    }
-
-    /* CASE STUDY */
-
-    .case-study {
-      background: var(--navy-2);
-    }
-
-    .case-grid {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 15px;
-    }
-
-    .case-box {
-      padding: 24px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.03);
-    }
-
-    .case-box span {
-      display: block;
-      color: var(--teal);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      margin-bottom: 9px;
-    }
-
-    .case-box p {
-      color: #cbd5e1;
-      font-size: 14px;
-    }
-
-    /* SERVICES */
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 15px;
-    }
-
-    .service {
-      padding: 23px;
-      border-radius: 15px;
-      background: var(--card);
-      border: 1px solid var(--border);
-    }
-
-    .service h3 {
-      font-size: 16px;
-      margin-bottom: 7px;
-    }
-
-    .service p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* TOOLS */
-
-    .tools {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 11px;
-    }
-
-    .tool {
-      padding: 11px 16px;
-      border-radius: 9px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      color: #dbeafe;
-      font-size: 14px;
-    }
-
-    /* CERTIFICATES */
-
-    .cert-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 18px;
-    }
-
-    .cert-card {
-      padding: 25px;
-      border-radius: 16px;
-      background: var(--card);
-      border: 1px solid var(--border);
-    }
-
-    .cert-card h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .cert-card p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* CONTACT */
-
-    .contact-box {
-      max-width: 850px;
-      margin: auto;
-      padding: 55px 30px;
-      text-align: center;
-      border-radius: 25px;
-      background: var(--card);
-      border: 1px solid var(--border);
-    }
-
-    .contact-box h2 {
-      font-size: clamp(30px,5vw,46px);
-      margin-bottom: 14px;
-    }
-
-    .contact-box > p {
-      color: var(--muted);
-      margin-bottom: 25px;
-    }
-
-    .contact-buttons {
-      justify-content: center;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 25px;
-    }
-
-    .social-btn {
-      padding: 10px 16px;
-      border-radius: 9px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
-      color: #cbd5e1;
-      font-size: 13px;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .social-btn:hover {
-      border-color: var(--teal);
-      color: var(--teal-light);
-    }
-
-    .contact-info {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-top: 25px;
-      color: #cbd5e1;
-      font-size: 13px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 30px 0;
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .diagram {
-        min-height: 430px;
-        max-width: 500px;
-        margin: auto;
-      }
-
-      .skills-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .services-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .case-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .cert-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-    }
-
-    @media (max-width: 650px) {
-
-      .nav-links {
-        display: none;
-      }
-
-      section {
-        padding: 65px 0;
-      }
-
-      .hero {
-        padding: 60px 0;
-      }
-
-      .hero-grid {
-        gap: 20px;
-      }
-
-      .hero h1 {
-        letter-spacing: -2px;
-      }
-
-      .diagram {
-        min-height: 370px;
-        transform: scale(0.88);
-        margin-top: -20px;
-        margin-bottom: -30px;
-      }
-
-      .diagram::before {
-        width: 280px;
-        height: 280px;
-      }
-
-      .diagram::after {
-        width: 210px;
-        height: 210px;
-      }
-
-      .center-node {
-        width: 125px;
-        height: 125px;
-        font-size: 14px;
-      }
-
-      .node {
-        width: 94px;
-        min-height: 62px;
-        font-size: 10px;
-      }
-
-      .node-1 {
-        top: 15px;
-      }
-
-      .node-2 {
-        top: 80px;
-        right: 0;
-      }
-
-      .node-3 {
-        bottom: 80px;
-        right: 0;
-      }
-
-      .node-4 {
-        bottom: 15px;
-      }
-
-      .node-5 {
-        bottom: 80px;
-        left: 0;
-      }
-
-      .node-6 {
-        top: 80px;
-        left: 0;
-      }
-
-      .about-grid,
-      .projects {
-        grid-template-columns: 1fr;
-      }
-
-      .skills-grid,
-      .services-grid,
-      .case-grid,
-      .cert-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .experience-card {
-        grid-template-columns: 1fr;
-      }
-
-      .about-card,
-      .project-card,
-      .experience-card {
-        padding: 24px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .contact-buttons {
-        display: flex;
-      }
-
-      .contact-buttons .btn {
-        width: 100%;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aneka Pervez | Digital Marketing Specialist</title>
+
+<meta name="description" content="Aneka Pervez - Digital Marketing Specialist specializing in Social Media, Meta Ads, Shopify, Email Marketing, Brevo, Canva and Content Strategy.">
+
+<style>
+:root{
+  --navy:#0f172a;
+  --navy2:#111c33;
+  --teal:#14b8a6;
+  --light:#e2e8f0;
+  --muted:#94a3b8;
+  --white:#fff;
+  --border:rgba(255,255,255,.12);
+  --card:rgba(255,255,255,.06);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--navy);
+  color:var(--white);
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  width:92%;
+  max-width:1100px;
+  margin:auto;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(15,23,42,.97);
+  border-bottom:1px solid var(--border);
+}
+
+nav{
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:bold;
+}
+
+.logo span{
+  color:var(--teal);
+}
+
+.nav-links{
+  display:flex;
+  gap:20px;
+  list-style:none;
+}
+
+.nav-links a{
+  color:#cbd5e1;
+  font-size:14px;
+}
+
+section{
+  padding:80px 0;
+}
+
+.hero{
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 14px;
+  border:1px solid rgba(20,184,166,.4);
+  border-radius:30px;
+  color:#5eead4;
+  background:rgba(20,184,166,.08);
+  font-size:11px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+h1{
+  font-size:clamp(45px,7vw,75px);
+  line-height:1;
+  margin-bottom:18px;
+}
+
+h1 span{
+  color:var(--teal);
+}
+
+.hero h2{
+  color:#cbd5e1;
+  font-size:27px;
+  font-weight:normal;
+  margin-bottom:18px;
+}
+
+.hero p{
+  color:var(--muted);
+  max-width:600px;
+  margin-bottom:25px;
+}
+
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.btn{
+  display:inline-block;
+  padding:13px 20px;
+  border-radius:9px;
+  font-weight:bold;
+  font-size:14px;
+}
+
+.btn-primary{
+  background:var(--teal);
+  color:var(--navy);
+}
+
+.btn-outline{
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.03);
+}
+
+.diagram{
+  min-height:420px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.diagram-circle{
+  width:300px;
+  height:300px;
+  border:1px solid rgba(20,184,166,.3);
+  border-radius:50%;
+  position:absolute;
+}
+
+.center{
+  width:145px;
+  height:145px;
+  border-radius:50%;
+  background:var(--teal);
+  color:var(--navy);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-weight:bold;
+  z-index:2;
+}
+
+.node{
+  position:absolute;
+  padding:12px;
+  width:110px;
+  text-align:center;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:var(--card);
+  font-size:11px;
+  font-weight:bold;
+}
+
+.n1{top:25px;left:50%;transform:translateX(-50%)}
+.n2{top:105px;right:10px}
+.n3{bottom:105px;right:10px}
+.n4{bottom:25px;left:50%;transform:translateX(-50%)}
+.n5{bottom:105px;left:10px}
+.n6{top:105px;left:10px}
+
+.section-heading{
+  margin-bottom:35px;
+}
+
+.section-heading small{
+  color:var(--teal);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-weight:bold;
+  font-size:11px;
+}
+
+.section-heading h2{
+  font-size:42px;
+  margin:8px 0;
+}
+
+.section-heading p{
+  color:var(--muted);
+  max-width:700px;
+}
+
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.card{
+  padding:28px;
+  border-radius:18px;
+  background:var(--card);
+  border:1px solid var(--border);
+}
+
+.card p{
+  color:#cbd5e1;
+  margin-bottom:12px;
+}
+
+.highlight{
+  color:#5eead4;
+  font-weight:bold;
+}
+
+.experience{
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:30px;
+  padding:30px;
+  border-radius:18px;
+  background:var(--card);
+  border:1px solid var(--border);
+}
+
+.number{
+  font-size:55px;
+  font-weight:bold;
+  color:var(--teal);
+}
+
+.muted{
+  color:var(--muted);
+}
+
+.skills{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.skill{
+  padding:23px;
+  border-radius:16px;
+  background:var(--card);
+  border:1px solid var(--border);
+}
+
+.skill h3{
+  color:#5eead4;
+  margin-bottom:8px;
+}
+
+.skill p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.projects{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.project{
+  padding:30px;
+  border-radius:18px;
+  background:var(--card);
+  border:1px solid var(--border);
+}
+
+.project.featured{
+  border-color:rgba(20,184,166,.5);
+}
+
+.label{
+  display:inline-block;
+  color:#5eead4;
+  background:rgba(20,184,166,.1);
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:10px;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+.project h3{
+  font-size:28px;
+  margin-bottom:5px;
+}
+
+.project h4{
+  color:#cbd5e1;
+  margin-bottom:15px;
+}
+
+.project > p{
+  color:var(--muted);
+  margin-bottom:15px;
+}
+
+.project ul{
+  list-style:none;
+  margin-bottom:20px;
+}
+
+.project li{
+  color:#cbd5e1;
+  font-size:14px;
+  margin:7px 0;
+}
+
+.project li::before{
+  content:"✓";
+  color:var(--teal);
+  margin-right:8px;
+  font-weight:bold;
+}
+
+.case{
+  background:var(--navy2);
+}
+
+.case-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.case-box{
+  padding:22px;
+  border:1px solid var(--border);
+  border-radius:15px;
+  background:rgba(255,255,255,.03);
+}
+
+.case-box strong{
+  display:block;
+  color:var(--teal);
+  font-size:11px;
+  margin-bottom:8px;
+}
+
+.case-box p{
+  color:#cbd5e1;
+  font-size:14px;
+}
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.service{
+  padding:22px;
+  border:1px solid var(--border);
+  border-radius:15px;
+  background:var(--card);
+}
+
+.service h3{
+  font-size:16px;
+  margin-bottom:7px;
+}
+
+.service p{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.tools{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.tool{
+  padding:10px 15px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  background:var(--card);
+  color:#cbd5e1;
+}
+
+.certs{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.cert{
+  padding:23px;
+  border:1px solid var(--border);
+  border-radius:15px;
+  background:var(--card);
+}
+
+.cert h3{
+  margin-bottom:8px;
+}
+
+.cert p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.contact-box{
+  max-width:850px;
+  margin:auto;
+  padding:50px 30px;
+  text-align:center;
+  border:1px solid var(--border);
+  border-radius:22px;
+  background:var(--card);
+}
+
+.contact-box h2{
+  font-size:42px;
+  margin-bottom:12px;
+}
+
+.contact-box > p{
+  color:var(--muted);
+  margin-bottom:25px;
+}
+
+.social{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:25px;
+}
+
+.social a{
+  padding:10px 15px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  color:#cbd5e1;
+}
+
+.contact-info{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:18px;
+  margin-top:25px;
+  color:#cbd5e1;
+  font-size:13px;
+}
+
+footer{
+  padding:30px;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid var(--border);
+}
+
+@media(max-width:850px){
+
+  .hero-grid,
+  .card-grid,
+  .projects{
+    grid-template-columns:1fr;
+  }
+
+  .skills{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .services{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .case-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .certs{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+
+  .nav-links{
+    display:none;
+  }
+
+  section{
+    padding:60px 0;
+  }
+
+  .hero{
+    padding:55px 0;
+  }
+
+  .diagram{
+    min-height:350px;
+    transform:scale(.85);
+  }
+
+  .skills,
+  .services,
+  .case-grid,
+  .certs{
+    grid-template-columns:1fr;
+  }
+
+  .experience{
+    grid-template-columns:1fr;
+  }
+
+  .section-heading h2,
+  .contact-box h2{
+    font-size:32px;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
+<header>
+<div class="container">
+<nav>
+<a href="#home" class="logo">Aneka<span>.</span></a>
+
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#certificates">Certificates</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+<div class="container">
+<div class="hero-grid">
+
+<div>
+<span class="badge">AVAILABLE FOR REMOTE OPPORTUNITIES</span>
+
+<h1>Hi, I'm <span>Aneka Pervez.</span></h1>
+
+<h2>Digital Marketing Specialist</h2>
+
+<p>
+I help businesses build a stronger online presence through Social Media
+Marketing, Meta Advertising, Content Strategy, Shopify, E-commerce and
+Email Marketing with Brevo.
+</p>
+
+<div class="buttons">
+<a href="#projects" class="btn btn-primary">View My Work</a>
+<a href="mailto:anekaanie@gmail.com" class="btn btn-outline">Contact Me</a>
+<a href="Aneka_Pervez_CV.pdf" download class="btn btn-outline">Download CV</a>
+</div>
+</div>
+
+<div class="diagram">
+
+<div class="diagram-circle"></div>
+
+<div class="center">
+DIGITAL<br>MARKETING
+</div>
+
+<div class="node n1">SOCIAL<br>MEDIA</div>
+<div class="node n2">META<br>ADS</div>
+<div class="node n3">CONTENT<br>STRATEGY</div>
+<div class="node n4">SHOPIFY<br>E-COMMERCE</div>
+<div class="node n5">EMAIL<br>MARKETING</div>
+<div class="node n6">CANVA<br>DESIGN</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+<div class="container">
+
+<div class="section-heading">
+<small>About Me</small>
+<h2>Creative, organized & growth-focused.</h2>
+<p>A combination of professional experience, digital marketing training and hands-on projects.</p>
+</div>
+
+<div class="card-grid">
+
+<div class="card">
+<p>
+I am <span class="highlight">Aneka Pervez</span>, a Digital Marketing
+professional trained in social media marketing, Shopify, content strategy,
+Canva designing, Meta advertising, competitor research, analytics and
+email marketing.
+</p>
+
+<p>
+I have completed Digital Marketing training through
+<span class="highlight">Bano Qabil</span> and
+<span class="highlight">DigiSkills</span>.
+</p>
+
+<p>
+I enjoy creating structured marketing strategies, professional content
+and digital experiences that help brands build their online presence.
+</p>
+</div>
+
+<div class="card">
+<h3>What I Bring</h3>
+<br>
+<p>✓ Strong communication skills</p>
+<p>✓ Content planning & organization</p>
+<p>✓ Social media strategy</p>
+<p>✓ Canva designing</p>
+<p>✓ Shopify & E-commerce knowledge</p>
+<p>✓ Email marketing with Brevo</p>
+<p>✓ Research & analytical thinking</p>
+<p>✓ Professional reporting</p>
+</div>
 
-  <header>
-    <div class="container">
-      <nav>
+</div>
+</div>
+</section>
+
 
-        <a href="#home" class="logo">
-          Aneka<span>.</span>
-        </a>
+<!-- EXPERIENCE -->
 
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#certificates">Certificates</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+<section id="experience">
+<div class="container">
 
-      </nav>
-    </div>
-  </header>
+<div class="section-heading">
+<small>Professional Experience</small>
+<h2>11 Years of Professional Experience</h2>
+</div>
 
+<div class="experience">
 
-  <!-- HERO -->
+<div>
+<div class="number">11+</div>
+<p class="muted">Years Experience</p>
+</div>
 
-  <section class="hero" id="home">
+<div>
+<h3>Government Sector Teacher</h3>
 
-    <div class="container">
+<p class="muted">
+11 years of professional teaching experience in the government sector.
+This experience has developed strong communication, presentation,
+planning, documentation, time management, coordination and
+problem-solving skills.
+</p>
+
+<br>
+
+<p class="muted">
+These transferable skills support my work in digital marketing,
+client communication, content planning, reporting and remote teamwork.
+</p>
+</div>
 
-      <div class="hero-grid">
+</div>
+</div>
+</section>
 
-        <div class="hero-content">
 
-          <span class="badge">
-            AVAILABLE FOR REMOTE OPPORTUNITIES
-          </span>
+<!-- SKILLS -->
 
-          <h1>
-            Hi, I'm <span>Aneka Pervez.</span>
-          </h1>
+<section id="skills">
+<div class="container">
 
-          <h2>
-            Digital Marketing Specialist
-          </h2>
+<div class="section-heading">
+<small>My Expertise</small>
+<h2>Digital Marketing Skills</h2>
+<p>Practical skills developed through professional training and hands-on projects.</p>
+</div>
 
-          <p class="hero-description">
-            I help businesses build a stronger online presence through
-            Social Media Marketing, Meta Advertising, Content Strategy,
-            Shopify, E-commerce and Email Marketing with Brevo.
-          </p>
+<div class="skills">
+
+<div class="skill">
+<h3>Digital Marketing</h3>
+<p>Digital strategy, audience research, competitor analysis, marketing planning and performance reporting.</p>
+</div>
 
-          <div class="buttons">
+<div class="skill">
+<h3>Social Media</h3>
+<p>Facebook, Instagram, social media management, captions, content calendars and Meta Business Suite.</p>
+</div>
 
-            <a href="#projects" class="btn btn-primary">
-              View My Work
-            </a>
+<div class="skill">
+<h3>Meta Advertising</h3>
+<p>Facebook & Instagram advertising concepts, audience research, campaign planning and optimization.</p>
+</div>
 
-            <a href="mailto:anekaanie@gmail.com" class="btn btn-outline">
-              Contact Me
-            </a>
+<div class="skill">
+<h3>Content & Canva</h3>
+<p>Social media graphics, promotional designs, captions, content ideas and visual branding.</p>
+</div>
 
-            <a href="Aneka_Pervez_CV.pdf" download class="btn btn-outline">
-              Download CV
-            </a>
+<div class="skill">
+<h3>Shopify & E-commerce</h3>
+<p>Shopify store setup, products, collections, product presentation and basic e-commerce structure.</p>
+</div>
 
-          </div>
+<div class="skill">
+<h3>Email Marketing</h3>
+<p>Email campaigns, newsletters, templates, contact lists, scheduling and basic campaign analytics using Brevo.</p>
+</div>
 
-        </div>
+</div>
+</div>
+</section>
 
 
-        <!-- DIGITAL MARKETING DIAGRAM -->
+<!-- PROJECTS -->
 
-        <div class="diagram" aria-label="Digital Marketing Skills Diagram">
+<section id="projects">
+<div class="container">
 
-          <div class="center-node">
-            DIGITAL<br>
-            MARKETING
-          </div>
+<div class="section-heading">
+<small>Selected Work</small>
+<h2>Projects & Case Studies</h2>
+<p>Practical projects demonstrating my digital marketing, e-commerce and content skills.</p>
+</div>
 
-          <div class="node node-1">
-            SOCIAL<br>
-            MEDIA
-          </div>
+<div class="projects">
 
-          <div class="node node-2">
-            META<br>
-            ADS
-          </div>
+<div class="project featured">
 
-          <div class="node node-3">
-            CONTENT<br>
-            STRATEGY
-          </div>
+<span class="label">Featured Project</span>
 
-          <div class="node node-4">
-            SHOPIFY<br>
-            E-COMMERCE
-          </div>
+<h3>SocialBoost</h3>
+<h4>Digital Marketing & Social Media Project</h4>
 
-          <div class="node node-5">
-            EMAIL<br>
-            MARKETING
-          </div>
+<p>
+SocialBoost is a service-based digital marketing project created to help
+businesses build a stronger online presence through social media management,
+creative content, advertising, research and strategy.
+</p>
 
-          <div class="node node-6">
-            CANVA<br>
-            DESIGN
-          </div>
+<ul>
+<li>Developed the SocialBoost brand concept</li>
+<li>Created a professional digital presence</li>
+<li>Planned social media marketing strategies</li>
+<li>Created content ideas and calendars</li>
+<li>Designed social media graphics using Canva</li>
+<li>Planned Facebook & Instagram advertising</li>
+<li>Worked on competitor and audience research</li>
+<li>Planned analytics and reporting</li>
+<li>Developed digital marketing service packages</li>
+<li>Planned email marketing concepts using Brevo</li>
+</ul>
 
-        </div>
+<a href="https://socailboost.online" target="_blank" class="btn btn-primary">
+Visit SocialBoost
+</a>
 
-      </div>
+</div>
 
-    </div>
 
-  </section>
+<div class="project">
 
+<span class="label">E-commerce Project</span>
 
-  <!-- ABOUT -->
+<h3>Zaib-o-Zan</h3>
+<h4>Shopify E-commerce Brand</h4>
 
-  <section id="about">
+<p>
+A Shopify-based jewellery brand project focused on bracelets and anklets,
+including branding, product presentation and e-commerce store structure.
+</p>
 
-    <div class="container">
+<ul>
+<li>Shopify store setup</li>
+<li>Product presentation</li>
+<li>Collections and store structure</li>
+<li>Branding and visual identity</li>
+<li>Product content and descriptions</li>
+<li>Social media integration concepts</li>
+</ul>
 
-      <div class="section-heading">
+</div>
 
-        <small>About Me</small>
+</div>
+</div>
+</section>
 
-        <h2>
-          Creative, organized & growth-focused.
-        </h2>
 
-        <p>
-          A combination of professional experience, digital marketing
-          training and hands-on projects.
-        </p>
+<!-- CASE STUDY -->
 
-      </div>
+<section class="case">
+<div class="container">
 
+<div class="section-heading">
+<small>SocialBoost Case Study</small>
+<h2>From Idea to Digital Brand</h2>
+<p>A practical demonstration of how I approach a digital marketing project from strategy to execution.</p>
+</div>
 
-      <div class="about-grid">
+<div class="case-grid">
 
-        <div class="about-card">
+<div class="case-box">
+<strong>01 • CHALLENGE</strong>
+<p>Build a professional service-based digital marketing brand with a clear online presence.</p>
+</div>
 
-          <p>
-            I am <span class="highlight">Aneka Pervez</span>, a Digital
-            Marketing professional trained in social media marketing,
-            Shopify, content strategy, Canva designing, Meta advertising,
-            competitor research, analytics and email marketing.
-          </p>
+<div class="case-box">
+<strong>02 • STRATEGY</strong>
+<p>Defined services, target audience, content direction, social media strategy and marketing workflow.</p>
+</div>
 
-          <p>
-            I have completed Digital Marketing training through
-            <span class="highlight">Bano Qabil</span> and
-            <span class="highlight">DigiSkills</span>, including practical
-            Shopify and digital marketing work.
-          </p>
+<div class="case-box">
+<strong>03 • EXECUTION</strong>
+<p>Created website, branding, content calendar, marketing assets, service structure and campaign concepts.</p>
+</div>
 
-          <p>
-            I enjoy creating structured marketing strategies,
-            professional content and digital experiences that help
-            brands build their online presence.
-          </p>
+<div class="case-box">
+<strong>04 • OUTCOME</strong>
+<p>Developed a complete digital marketing project with a professional online presence and structured services.</p>
+</div>
 
-        </div>
+</div>
+</div>
+</section>
 
 
-        <div class="about-card">
+<!-- SERVICES -->
 
-          <h3 style="margin-bottom:18px;">
-            What I Bring
-          </h3>
+<section>
+<div class="container">
 
-          <p>✓ Strong communication skills</p>
-          <p>✓ Content planning & organization</p>
-          <p>✓ Social media strategy</p>
-          <p>✓ Canva designing</p>
-          <p>✓ Shopify & E-commerce knowledge</p>
-          <p>✓ Email marketing with Brevo</p>
-          <p>✓ Research & analytical thinking</p>
-          <p>✓ Professional reporting</p>
+<div class="section-heading">
+<small>What I Can Do</small>
+<h2>Marketing Services</h2>
+</div>
 
-        </div>
+<div class="services">
 
-      </div>
+<div class="service">
+<h3>Social Media Management</h3>
+<p>Planning, posting, captions and content organization.</p>
+</div>
 
-    </div>
+<div class="service">
+<h3>Content Strategy</h3>
+<p>Content ideas, calendars and audience-focused planning.</p>
+</div>
 
-  </section>
+<div class="service">
+<h3>Meta Advertising</h3>
+<p>Facebook & Instagram advertising campaign planning.</p>
+</div>
 
+<div class="service">
+<h3>Canva Designing</h3>
+<p>Social posts, promotional graphics and digital creatives.</p>
+</div>
 
-  <!-- EXPERIENCE -->
+<div class="service">
+<h3>Email Marketing</h3>
+<p>Email campaigns, newsletters and Brevo workflows.</p>
+</div>
 
-  <section id="experience">
+<div class="service">
+<h3>Shopify</h3>
+<p>Store setup, products, collections and e-commerce structure.</p>
+</div>
 
-    <div class="container">
+<div class="service">
+<h3>Competitor Research</h3>
+<p>Market and competitor research for marketing decisions.</p>
+</div>
 
-      <div class="section-heading">
+<div class="service">
+<h3>Analytics & Reports</h3>
+<p>Basic performance tracking and marketing reporting.</p>
+</div>
 
-        <small>Professional Experience</small>
+</div>
+</div>
+</section>
 
-        <h2>
-          11 Years of Professional Experience
-        </h2>
 
-      </div>
+<!-- TOOLS -->
 
+<section>
+<div class="container">
 
-      <div class="experience-card">
+<div class="section-heading">
+<small>Tools I Use</small>
+<h2>Digital Marketing Toolkit</h2>
+</div>
 
-        <div>
+<div class="tools">
 
-          <div class="experience-number">
-            11+
-          </div>
+<span class="tool">Canva</span>
+<span class="tool">Shopify</span>
+<span class="tool">Meta Business Suite</span>
+<span class="tool">Facebook Ads Manager</span>
+<span class="tool">Brevo</span>
+<span class="tool">ChatGPT</span>
+<span class="tool">Claude</span>
+<span class="tool">Google Gemini</span>
+<span class="tool">Google Analytics</span>
+<span class="tool">Google Search</span>
 
-          <p style="margin-top:8px;">
-            Years Experience
-          </p>
+</div>
+</div>
+</section>
 
-        </div>
 
+<!-- CERTIFICATES -->
 
-        <div>
+<section id="certificates">
+<div class="container">
 
-          <h3>
-            Government Sector Teacher
-          </h3>
+<div class="section-heading">
+<small>Education & Training</small>
+<h2>Certificates & Learning</h2>
+</div>
 
-          <p>
-            11 years of professional teaching experience in the
-            government sector. This experience has developed strong
-            communication, presentation, planning, documentation,
-            time management, coordination and problem-solving skills.
-          </p>
+<div class="certs">
 
-          <p style="margin-top:12px;">
-            These transferable skills support my work in digital
-            marketing, client communication, content planning,
-            reporting and remote teamwork.
-          </p>
+<div class="cert">
+<h3>Digital Marketing</h3>
+<p>Bano Qabil — Kahuta<br>Professional Digital Marketing training.</p>
+</div>
 
-        </div>
+<div class="cert">
+<h3>Digital Marketing</h3>
+<p>DigiSkills.pk<br>Digital marketing concepts, strategy and practical skills.</p>
+</div>
 
-      </div>
+<div class="cert">
+<h3>Shopify</h3>
+<p>DigiSkills.pk<br>Shopify and e-commerce practical training.</p>
+</div>
 
-    </div>
+<div class="cert">
+<h3>Master's in Economics</h3>
+<p>Fatima Jinnah Women University, Rawalpindi<br>2014</p>
+</div>
 
-  </section>
+</div>
+</div>
+</section>
 
 
-  <!-- SKILLS -->
+<!-- CONTACT -->
 
-  <section id="skills">
+<section id="contact">
+<div class="container">
 
-    <div class="container">
+<div class="contact-box">
 
-      <div class="section-heading">
+<h2>Let's Work Together.</h2>
 
-        <small>My Expertise</small>
+<p>
+I am open to remote opportunities in Digital Marketing,
+Social Media, Content, Shopify and E-commerce.
+</p>
 
-        <h2>
-          Digital Marketing Skills
-        </h2>
+<div class="buttons">
 
-        <p>
-          Practical skills developed through professional training
-          and hands-on projects.
-        </p>
+<a href="mailto:anekaanie@gmail.com" class="btn btn-primary">
+Email Me
+</a>
 
-      </div>
+<a href="https://wa.me/923085907349" target="_blank" class="btn btn-outline">
+WhatsApp
+</a>
 
+<a href="Aneka_Pervez_CV.pdf" download class="btn btn-outline">
+Download CV
+</a>
 
-      <div class="skills-grid">
+</div>
 
-        <div class="skill-card">
-          <h3>Digital Marketing</h3>
-          <p>
-            Digital strategy, audience research, competitor analysis,
-            marketing planning and performance reporting.
-          </p>
-        </div>
+<div class="social">
 
-        <div class="skill-card">
-          <h3>Social Media</h3>
-          <p>
-            Facebook, Instagram, social media management, captions,
-            content calendars and Meta Business Suite.
-          </p>
-        </div>
+<a href="https://www.linkedin.com/in/aneka-satti" target="_blank">LinkedIn</a>
 
-        <div class="skill-card">
-          <h3>Meta Advertising</h3>
-          <p>
-            Facebook & Instagram advertising concepts, audience
-            research, campaign planning and optimization.
-          </p>
-        </div>
+<a href="https://www.facebook.com/profile.php?id=61591204604219" target="_blank">Facebook</a>
 
-        <div class="skill-card">
-          <h3>Content & Canva</h3>
-          <p>
-            Social media graphics, promotional designs, captions,
-            content ideas and visual branding.
-          </p>
-        </div>
+<a href="https://www.instagram.com/zaibozan" target="_blank">Instagram</a>
 
-        <div class="skill-card">
-          <h3>Shopify & E-commerce</h3>
-          <p>
-            Shopify store setup, products, collections, product
-            presentation and basic e-commerce structure.
-          </p>
-        </div>
+<a href="https://wa.me/923085907349" target="_blank">WhatsApp</a>
 
-        <div class="skill-card">
-          <h3>Email Marketing</h3>
-          <p>
-            Email campaigns, newsletters, templates, contact lists,
-            scheduling and basic campaign analytics using Brevo.
-          </p>
-        </div>
+</div>
 
-      </div>
+<div class="contact-info">
 
-    </div>
+<span>📧 anekaanie@gmail.com</span>
+<span>📱 03480680633</span>
 
-  </section>
+<a href="https://aneka-portfolio.vercel.app" target="_blank">
+🌐 Portfolio
+</a>
 
+</div>
 
-  <!-- PROJECTS -->
+</div>
+</div>
+</section>
 
-  <section id="projects">
 
-    <div class="container">
-
-      <div class="section-heading">
-
-        <small>Selected Work</small>
-
-        <h2>
-          Projects & Case Studies
-        </h2>
-
-        <p>
-          Practical projects demonstrating my digital marketing,
-          e-commerce and content skills.
-        </p>
-
-      </div>
-
-
-      <div class="projects">
-
-
-        <!-- SOCIALBOOST -->
-
-        <article class="project-card featured">
-
-          <span class="project-label">
-            Featured Project
-          </span>
-
-          <h3>
-            SocialBoost
-          </h3>
-
-          <h4>
-            Digital Marketing & Social Media Project
-          </h4>
-
-          <p>
-            SocialBoost is a service-based digital marketing project
-            created to help businesses build a stronger online
-            presence through social media management, creative
-            content, advertising, research and strategy.
-          </p>
-
-          <ul class="project-list">
-
-            <li>Developed the SocialBoost brand concept</li>
-
-            <li>Created a professional digital presence</li>
-
-            <li>Planned social media marketing strategies</li>
-
-            <li>Created content ideas and calendars</li>
-
-            <li>Designed social media graphics using Canva</li>
-
-            <li>Planned Facebook & Instagram advertising</li>
-
-            <li>Worked on competitor and audience research</li>
-
-            <li>Planned analytics and reporting</li>
-
-            <li>Developed digital marketing service packages</li>
-
-            <li>Planned email marketing concepts using Brevo</li>
-
-          </ul>
-
-          <div class="buttons">
-
-            <a
-              href="https://socailboost.online"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-primary"
-            >
-              Visit SocialBoost
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- ZAIB O ZAN -->
-
-        <article class="project-card">
-
-          <span class="project-label">
-            E-commerce Project
-          </span>
-
-          <h3>
-            Zaib-o-Zan
-          </h3>
-
-          <h4>
-            Shopify E-commerce Brand
-          </h4>
-
-          <p>
-            A Shopify-based jewellery brand project focused on
-            bracelets and anklets, including branding, product
-            presentation and e-commerce store structure.
-          </p>
-
-          <ul class="project-list">
-
-            <li>Shopify store setup</li>
-
-            <li>Product presentation</li>
-
-            <li>Collections and store structure</li>
-
-            <li>Branding and visual identity</li>
-
-            <li>Product content and descriptions</li>
-
-            <li>Social media integration concepts</li>
-
-          </ul>
-
-        </article>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CASE STUDY -->
-
-  <section class="case-study">
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <small>SocialBoost Case Study</small>
-
-        <h2>
-          From Idea to Digital Brand
-        </h2>
-
-        <p>
-          A practical demonstration of how I approach a digital
-          marketing project from strategy to execution.
-        </p>
-
-      </div>
-
-
-      <div class="case-grid">
-
-        <div class="case-box">
-
-          <span>
-            01 • CHALLENGE
-          </span>
-
-          <p>
-            Build a professional service-based digital marketing
-            brand with a clear online presence.
-          </p>
-
-        </div>
-
-
-        <div class="case-box">
-
-          <span>
-            02 • STRATEGY
-          </span>
-
-          <p>
-            Defined services, target audience, content direction,
-            social media strategy and marketing workflow.
-          </p>
-
-        </div>
-
-
-        <div class="case-box">
-
-          <span>
-            03 • EXECUTION
-          </span>
-
-          <p>
-            Created website, branding, content calendar, marketing
-            assets, service structure and campaign concepts.
-          </p>
-
-        </div>
-
-
-        <div class="case-box">
-
-          <span>
-            04 • OUTCOME
-          </span>
-
-          <p>
-            Developed a complete digital marketing project with a
-            professional online presence and structured services.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- SERVICES -->
-
-  <section>
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <small>What I Can Do</small>
-
-        <h2>
-          Marketing Services
-        </h2>
-
-      </div>
-
-
-      <div class="services-grid">
-
-        <div class="service">
-          <h3>Social Media Management</h3>
-          <p>
-            Planning, posting, captions and content organization.
-          </p>
-        </div>
-
-        <div class="service">
-          <h3>Content Strategy</h3>
-          <p>
-            Content ideas, calendars and audience-focused planning.
-          </p>
-        </div>
-
-        <div class="service">
-          <h3>Meta Advertising</h3>
-          <p>
-            Facebook & Instagram advertising campaign planning.
-          </p>
-        </div>
-
-        <div class="service">
-          <h3>Canva Designing</h3>
-          <p>
-            Social posts, promotional graphics and digital creatives.
-          </p>
-        </div>
-
-        <div class="service">
-          <h3>Email Marketing</h3>
-          <p>
-            Email campaigns, newsletters and Brevo workflows.
-          </p>
-        </div>
-
-        <div class="service">
-          <h3>Shopify</h3>
-          <p>
-            Store setup, products, collections and e-commerce structure.
-          </p>
-        </div>
-
-        <div class="service">
-          <h3>Competitor Research</h3>
-          <p>
-            Market and competitor research for marketing decisions.
-          </p>
-        </div>
-
-        <div class="service">
-          <h3>Analytics & Reports</h3>
-          <p>
-            Basic performance tracking and marketing reporting.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- TOOLS -->
-
-  <section>
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <small>Tools I Use</small>
-
-        <h2>
-          Digital Marketing Toolkit
-        </h2>
-
-      </div>
-
-
-      <div class="tools">
-
-        <span class="tool">Canva</span>
-        <span class="tool">Shopify</span>
-        <span class="tool">Meta Business Suite</span>
-        <span class="tool">Facebook Ads Manager</span>
-        <span class="tool">Brevo</span>
-        <span class="tool">ChatGPT</span>
-        <span class="tool">Claude</span>
-        <span class="tool">Google Gemini</span>
-        <span class="tool">Google Analytics</span>
-        <span class="tool">Google Search</span>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CERTIFICATES -->
-
-  <section id="certificates">
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <small>Education & Training</small>
-
-        <h2>
-          Certificates & Learning
-        </h2>
-
-      </div>
-
-
-      <div class="cert-grid">
-
-        <div class="cert-card">
-
-          <h3>
-            Digital Marketing
-          </h3>
-
-          <p>
-            Bano Qabil — Kahuta<br>
-            Professional Digital Marketing training.
-          </p>
-
-        </div>
-
-
-        <div class="cert-card">
-
-          <h3>
-            Digital Marketing
-          </h3>
-
-          <p>
-            DigiSkills.pk<br>
-            Digital marketing concepts, strategy and practical skills.
-          </p>
-
-        </div>
-
-
-        <div class="cert-card">
-
-          <h3>
-            Shopify
-          </h3>
-
-          <p>
-            DigiSkills.pk<br>
-            Shopify and e-commerce practical training.
-          </p>
-
-        </div>
-
-
-        <div class="cert-card">
-
-          <h3>
-            Master's in Economics
-          </h3>
-
-          <p>
-            Fatima Jinnah Women University, Rawalpindi<br>
-            2014
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CONTACT -->
-
-  <section id="contact">
-
-    <div class="container">
-
-      <div class="contact-box">
-
-        <h2>
-          Let's Work Together.
-        </h2>
-
-        <p>
-          I am open to remote opportunities in Digital Marketing,
-          Social Media, Content, Shopify and E-commerce.
-        </p>
-
-
-        <div class="buttons contact-buttons">
-
-          <a
-            href="mailto:anekaanie@gmail.com"
-            class="btn btn-primary"
-          >
-            Email Me
-          </a>
-
-          <a
-            href="https://wa.me/923085907349"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-outline"
-          >
-            WhatsApp
-          </a>
-
-          <a
-            href="Aneka_Pervez_CV.pdf"
-            download
-            class="btn btn-outline"
-          >
-            Download CV
-          </a>
-
-        </div>
-
-
-        <!-- SOCIAL LINKS -->
-
-        <div class="social-links">
-
-          <a
-            href="https://www.linkedin.com/in/aneka-satti"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-btn"
-          >
-            LinkedIn
-          </a>
-
-          <a
-            href="https://www.facebook.com/profile.php?id=61591204604219"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-btn"
-          >
-            Facebook
-          </a>
-
-          <a
-            href="https://www.instagram.com/zaibozan"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-btn"
-          >
-            Instagram
-          </a>
-
-          <a
-            href="https://wa.me/923085907349"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-btn"
-          >
-            WhatsApp
-          </a>
-
-        </div>
-
-
-        <div class="contact-info">
-
-          <span>
-            📧 anekaanie@gmail.com
-          </span>
-
-          <span>
-            📱 03480680633
-          </span>
-
-          <a
-            href="https://aneka-portfolio.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🌐 Portfolio
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <div class="container">
-
-      <p>
-        © 2026 Aneka Pervez. Digital Marketing Portfolio.
-      </p>
-
-    </div>
-
-  </footer>
+<footer>
+<p>© 2026 Aneka Pervez. Digital Marketing Portfolio.</p>
+</footer>
 
 </body>
 </html>
