@@ -559,6 +559,325 @@ footer{
     text-align:center;
   }
 }
+
+/* ===== NEW: hero dashboard graph ===== */
+.hero-dash{
+  margin-top:50px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:var(--card);
+  overflow:hidden;
+}
+.hd-top{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 16px;
+  border-bottom:1px solid var(--border);
+}
+.hd-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:rgba(255,255,255,.2);
+}
+.hd-url{
+  margin-left:10px;
+  padding:3px 14px;
+  border-radius:20px;
+  background:rgba(255,255,255,.06);
+  color:var(--muted);
+  font-size:12px;
+}
+.hd-body{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:24px;
+  padding:24px;
+}
+.hd-title{
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:14px;
+}
+.hd-chart{
+  display:flex;
+  align-items:flex-end;
+  gap:12px;
+}
+.hd-col{
+  flex:1;
+  text-align:center;
+}
+.hd-track{
+  height:170px;
+  display:flex;
+  align-items:flex-end;
+  border-bottom:1px solid var(--border);
+}
+.hd-fill{
+  width:100%;
+  border-radius:6px 6px 0 0;
+  background:linear-gradient(180deg,var(--teal),rgba(20,184,166,.35));
+  transform-origin:bottom;
+  animation:hdGrow .9s ease-out both;
+}
+.hd-col:nth-child(2) .hd-fill{animation-delay:.08s}
+.hd-col:nth-child(3) .hd-fill{animation-delay:.16s}
+.hd-col:nth-child(4) .hd-fill{animation-delay:.24s}
+.hd-col:nth-child(5) .hd-fill{animation-delay:.32s}
+.hd-col:nth-child(6) .hd-fill{animation-delay:.40s}
+.hd-col:nth-child(7) .hd-fill{animation-delay:.48s}
+.hd-col span{
+  display:block;
+  margin-top:8px;
+  font-size:11px;
+  color:var(--muted);
+}
+@keyframes hdGrow{
+  from{transform:scaleY(0)}
+  to{transform:scaleY(1)}
+}
+.hd-side{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.hd-stat{
+  flex:1;
+  padding:14px 16px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:rgba(255,255,255,.03);
+}
+.hd-stat b{
+  display:block;
+  font-size:28px;
+  line-height:1.1;
+  color:var(--teal);
+}
+.hd-stat span{
+  color:var(--muted);
+  font-size:13px;
+}
+.hd-foot{
+  padding:12px 24px;
+  border-top:1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:8px;
+  font-size:12px;
+  color:var(--muted);
+}
+.hd-foot strong{
+  color:#5eead4;
+}
+
+/* ===== NEW: proof of work ===== */
+.pw-tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:25px;
+}
+.pw-tab{
+  padding:9px 18px;
+  border:1px solid var(--border);
+  border-radius:30px;
+  background:transparent;
+  color:#cbd5e1;
+  font-family:inherit;
+  font-size:14px;
+  cursor:pointer;
+}
+.pw-tab:hover{
+  border-color:var(--teal);
+}
+.pw-tab[aria-pressed="true"]{
+  background:var(--teal);
+  border-color:var(--teal);
+  color:var(--navy);
+  font-weight:bold;
+}
+.pw-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+.pw-card{
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:var(--card);
+  overflow:hidden;
+}
+.pw-card[hidden]{
+  display:none;
+}
+.pw-shot{
+  aspect-ratio:16/10;
+  background:var(--navy2);
+  position:relative;
+  overflow:hidden;
+}
+.pw-shot img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top;
+  display:block;
+}
+.pw-shot.pw-missing img{
+  display:none;
+}
+.pw-shot.pw-missing::after{
+  content:"Add screenshot: " attr(data-file);
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+}
+.pw-body{
+  padding:22px 24px 26px;
+}
+.pw-body h3{
+  font-size:20px;
+  margin:6px 0 8px;
+}
+.pw-body p{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:12px;
+}
+.pw-body a{
+  color:#5eead4;
+  font-size:14px;
+  font-weight:bold;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+
+.pw-shot video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  background:var(--navy2);
+}
+.pw-shot.pw-video{
+  aspect-ratio:4/5;
+}
+.pw-shot.pw-missing video{
+  display:none;
+}
+
+/* ===== NEW: how I work ===== */
+.hw-list{
+  border-top:1px solid var(--border);
+}
+.hw-row{
+  display:grid;
+  grid-template-columns:60px 220px 1fr;
+  gap:16px;
+  padding:24px 0;
+  border-bottom:1px solid var(--border);
+}
+.hw-row i{
+  font-style:normal;
+  color:var(--teal);
+  font-weight:bold;
+}
+.hw-row h3{
+  font-size:20px;
+}
+.hw-row p{
+  color:var(--muted);
+}
+
+/* ===== NEW: why work with me ===== */
+.why-grid{
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:50px;
+  align-items:start;
+}
+.why-grid h2{
+  font-size:42px;
+  line-height:1.15;
+}
+.why-list{
+  list-style:none;
+  border-top:1px solid var(--border);
+}
+.why-list li{
+  padding:18px 0;
+  border-bottom:1px solid var(--border);
+  color:var(--muted);
+}
+.why-list li::before{
+  content:"✓";
+  color:var(--teal);
+  margin-right:10px;
+  font-weight:bold;
+}
+.why-list b{
+  color:var(--white);
+}
+
+@media(max-width:850px){
+  .pw-grid{
+    grid-template-columns:1fr;
+  }
+  .why-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+  .hd-body{
+    grid-template-columns:1fr;
+  }
+  .hd-side{
+    flex-direction:row;
+  }
+}
+
+@media(max-width:600px){
+  .hero-dash{
+    margin-top:35px;
+  }
+  .hd-body{
+    padding:18px;
+  }
+  .hd-chart{
+    gap:6px;
+  }
+  .hd-col span{
+    font-size:9px;
+  }
+  .hd-side{
+    flex-direction:column;
+  }
+  .hw-row{
+    grid-template-columns:40px 1fr;
+  }
+  .hw-row p{
+    grid-column:2;
+  }
+  .why-grid h2{
+    font-size:32px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .hd-fill{
+    animation:none;
+  }
+}
 </style>
 </head>
 
@@ -573,6 +892,8 @@ footer{
 <li><a href="#about">About</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#projects">Projects</a></li>
+<li><a href="#work">Work</a></li>
+<li><a href="#process">Process</a></li>
 <li><a href="#experience">Experience</a></li>
 <li><a href="#certificates">Certificates</a></li>
 <li><a href="#contact">Contact</a></li>
@@ -623,6 +944,46 @@ DIGITAL<br>MARKETING
 <div class="node n5">EMAIL<br>MARKETING</div>
 <div class="node n6">CANVA<br>DESIGN</div>
 
+</div>
+
+</div>
+
+<!-- Hero graph -->
+<div class="hero-dash">
+
+<div class="hd-top">
+<span class="hd-dot"></span>
+<span class="hd-dot"></span>
+<span class="hd-dot"></span>
+<span class="hd-url">socailboost.online</span>
+</div>
+
+<div class="hd-body">
+
+<div>
+<p class="hd-title">My growth workflow, step by step</p>
+<div class="hd-chart" aria-hidden="true">
+<div class="hd-col"><div class="hd-track"><div class="hd-fill" style="height:22%"></div></div><span>Research</span></div>
+<div class="hd-col"><div class="hd-track"><div class="hd-fill" style="height:32%"></div></div><span>Plan</span></div>
+<div class="hd-col"><div class="hd-track"><div class="hd-fill" style="height:44%"></div></div><span>Design</span></div>
+<div class="hd-col"><div class="hd-track"><div class="hd-fill" style="height:56%"></div></div><span>Post</span></div>
+<div class="hd-col"><div class="hd-track"><div class="hd-fill" style="height:70%"></div></div><span>Track</span></div>
+<div class="hd-col"><div class="hd-track"><div class="hd-fill" style="height:84%"></div></div><span>Improve</span></div>
+<div class="hd-col"><div class="hd-track"><div class="hd-fill" style="height:100%"></div></div><span>Grow</span></div>
+</div>
+</div>
+
+<div class="hd-side">
+<div class="hd-stat"><b>11+</b><span>years of professional experience</span></div>
+<div class="hd-stat"><b>2</b><span>projects built</span></div>
+<div class="hd-stat"><b>3</b><span>training certificates</span></div>
+</div>
+
+</div>
+
+<div class="hd-foot">
+<strong>Strategy + Content + Growth</strong>
+<span>Illustration of my workflow, not real campaign data</span>
 </div>
 
 </div>
@@ -843,6 +1204,105 @@ including branding, product presentation and e-commerce store structure.
 </section>
 
 
+<!-- PROOF OF WORK -->
+
+<section id="work">
+<div class="container">
+
+<div class="section-heading">
+<small>Proof of Work</small>
+<h2>Screenshots from My Projects</h2>
+<p>Real pages, designs, ads and reels from the projects I built. Use the filters to see each type of work.</p>
+</div>
+
+<div class="pw-tabs" role="group" aria-label="Filter projects">
+<button class="pw-tab" type="button" data-filter="all" aria-pressed="true">All</button>
+<button class="pw-tab" type="button" data-filter="shopify" aria-pressed="false">Shopify</button>
+<button class="pw-tab" type="button" data-filter="social" aria-pressed="false">Social Media</button>
+<button class="pw-tab" type="button" data-filter="marketing" aria-pressed="false">Marketing</button>
+<button class="pw-tab" type="button" data-filter="reels" aria-pressed="false">Reels &amp; Ads</button>
+</div>
+
+<div class="pw-grid">
+
+<article class="pw-card" data-cat="marketing">
+<div class="pw-shot" data-file="images/socialboost-website.jpg">
+<img src="images/socialboost-website.jpg" alt="SocialBoost website homepage" loading="lazy">
+</div>
+<div class="pw-body">
+<span class="label">Marketing</span>
+<h3>SocialBoost Website</h3>
+<p>Website and service structure for my digital marketing business, with service packages for small business owners.</p>
+<a href="https://socailboost.online" target="_blank" rel="noopener">Visit socailboost.online</a>
+</div>
+</article>
+
+<article class="pw-card" data-cat="social">
+<div class="pw-shot" data-file="images/socialboost-posts.jpg">
+<img src="images/socialboost-posts.jpg" alt="SocialBoost social media posts designed in Canva" loading="lazy">
+</div>
+<div class="pw-body">
+<span class="label">Social Media</span>
+<h3>SocialBoost Social Content</h3>
+<p>Post designs and captions created in Canva and planned with a content calendar.</p>
+</div>
+</article>
+
+<article class="pw-card" data-cat="shopify">
+<div class="pw-shot" data-file="images/zaibozan-store.jpg">
+<img src="images/zaibozan-store.jpg" alt="Zaib-o-Zan Shopify store homepage" loading="lazy">
+</div>
+<div class="pw-body">
+<span class="label">Shopify</span>
+<h3>Zaib-o-Zan Online Store</h3>
+<p>Shopify store for bracelets and anklets, with collections, product pages, descriptions and branding.</p>
+<a href="https://5hwiw1-s2.myshopify.com/" target="_blank" rel="noopener">Visit the store</a>
+</div>
+</article>
+
+<article class="pw-card" data-cat="social">
+<div class="pw-shot" data-file="images/zaibozan-social.jpg">
+<img src="images/zaibozan-social.jpg" alt="Zaib-o-Zan Instagram and Canva designs" loading="lazy">
+</div>
+<div class="pw-body">
+<span class="label">Social Media</span>
+<h3>Zaib-o-Zan Product Posts</h3>
+<p>Product photos and promotional graphics for Instagram and Facebook.</p>
+</div>
+</article>
+
+<article class="pw-card" data-cat="reels">
+<div class="pw-shot pw-video" data-file="videos/ad-google-flow.mp4">
+<video controls preload="metadata" playsinline poster="images/ad-poster.jpg">
+<source src="videos/ad-google-flow.mp4" type="video/mp4">
+</video>
+</div>
+<div class="pw-body">
+<span class="label">Reels &amp; Ads</span>
+<h3>Ad Created with Google Flow AI</h3>
+<p>Promotional ad video made with Google Flow AI for a brand project.</p>
+</div>
+</article>
+
+<article class="pw-card" data-cat="reels">
+<div class="pw-shot pw-video" data-file="videos/reel-google-flow.mp4">
+<video controls preload="metadata" playsinline poster="images/reel-poster.jpg">
+<source src="videos/reel-google-flow.mp4" type="video/mp4">
+</video>
+</div>
+<div class="pw-body">
+<span class="label">Reels &amp; Ads</span>
+<h3>Reel Created with Google Flow AI</h3>
+<p>Short social media reel made with Google Flow AI for Instagram and Facebook.</p>
+</div>
+</article>
+
+
+</div>
+</div>
+</section>
+
+
 <!-- CASE STUDY -->
 
 <section class="case">
@@ -938,6 +1398,48 @@ including branding, product presentation and e-commerce store structure.
 </section>
 
 
+<!-- HOW I WORK -->
+
+<section id="process">
+<div class="container">
+
+<div class="section-heading">
+<small>Process</small>
+<h2>How I Work</h2>
+<p>The same four steps for every project, from the first message to the final report.</p>
+</div>
+
+<div class="hw-list">
+
+<div class="hw-row">
+<i>01</i>
+<h3>Research</h3>
+<p>Understand the business, its audience and its competitors before planning anything.</p>
+</div>
+
+<div class="hw-row">
+<i>02</i>
+<h3>Plan</h3>
+<p>Set clear goals, choose the right platforms and build a content calendar with dates.</p>
+</div>
+
+<div class="hw-row">
+<i>03</i>
+<h3>Create</h3>
+<p>Design posts in Canva, write captions, and set up ads, email campaigns or Shopify pages.</p>
+</div>
+
+<div class="hw-row">
+<i>04</i>
+<h3>Report</h3>
+<p>Track what worked, share a simple report and adjust the plan for the next round.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
 <!-- TOOLS -->
 
 <section>
@@ -958,6 +1460,7 @@ including branding, product presentation and e-commerce store structure.
 <span class="tool">ChatGPT</span>
 <span class="tool">Claude</span>
 <span class="tool">Google Gemini</span>
+<span class="tool">Google Flow AI</span>
 <span class="tool">Google Analytics</span>
 <span class="tool">Google Search</span>
 
@@ -999,6 +1502,32 @@ including branding, product presentation and e-commerce store structure.
 </div>
 
 </div>
+</div>
+</section>
+
+
+<!-- WHY WORK WITH ME -->
+
+<section id="why-me">
+<div class="container">
+
+<div class="why-grid">
+
+<div>
+<small class="highlight">Why work with me</small>
+<h2>A practical approach, built around your business.</h2>
+</div>
+
+<ul class="why-list">
+<li><b>Clear communication.</b> Eleven years in the classroom taught me to explain things simply and listen first.</li>
+<li><b>Organized planning.</b> Lesson plans became content calendars: everything scheduled, nothing last minute.</li>
+<li><b>Hands-on experience.</b> I run my own Shopify brand and my own marketing project, so I have done the work myself.</li>
+<li><b>Practical tools.</b> Canva, Google Flow AI, Meta Business Suite, Shopify and Brevo, used in real projects.</li>
+<li><b>Remote-ready.</b> Regular updates and reports, in Urdu or English.</li>
+</ul>
+
+</div>
+
 </div>
 </section>
 
@@ -1063,6 +1592,29 @@ Download CV
 <footer>
 <p>© 2026 Aneka Pervez. Digital Marketing Portfolio.</p>
 </footer>
+<script>
+(function(){
+  var tabs = document.querySelectorAll('.pw-tab');
+  var cards = document.querySelectorAll('.pw-card');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var f = tab.getAttribute('data-filter');
+      tabs.forEach(function(t){ t.setAttribute('aria-pressed', t === tab ? 'true' : 'false'); });
+      cards.forEach(function(c){
+        c.hidden = !(f === 'all' || c.getAttribute('data-cat') === f);
+      });
+    });
+  });
+  document.querySelectorAll('.pw-shot video source').forEach(function(src){
+    src.addEventListener('error', function(){ src.closest('.pw-shot').classList.add('pw-missing'); });
+  });
+  document.querySelectorAll('.pw-shot img').forEach(function(img){
+    function miss(){ img.parentNode.classList.add('pw-missing'); }
+    img.addEventListener('error', miss);
+    if (img.complete && img.naturalWidth === 0) miss();
+  });
+})();
+</script>
 <!-- portfolio update -->
 </body>
 </html>
