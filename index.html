@@ -855,6 +855,134 @@ footer{
   font-size:14px;
 }
 
+/* ===== NEW: mobile menu drawer ===== */
+.menu-btn{
+  display:none;
+  position:relative;
+  width:44px;
+  height:44px;
+  background:none;
+  border:0;
+  cursor:pointer;
+  color:var(--white);
+}
+.menu-btn span{
+  position:absolute;
+  left:9px;
+  right:9px;
+  height:2px;
+  border-radius:2px;
+  background:currentColor;
+  transition:transform .25s ease, opacity .2s ease, top .25s ease;
+}
+.menu-btn span:nth-child(1){top:14px}
+.menu-btn span:nth-child(2){top:21px}
+.menu-btn span:nth-child(3){top:28px}
+.menu-btn[aria-expanded="true"] span:nth-child(1){top:21px;transform:rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){top:21px;transform:rotate(-45deg)}
+.menu-btn:focus-visible{
+  outline:2px solid var(--teal);
+  outline-offset:2px;
+}
+@media(max-width:900px){
+  .menu-btn{
+    display:block;
+  }
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    flex-direction:column;
+    gap:0;
+    padding:8px 0 18px;
+    background:#0a1224;
+    border-bottom:1px solid var(--border);
+    max-height:calc(100vh - 71px);
+    overflow-y:auto;
+  }
+  .nav-links.open{
+    display:flex;
+  }
+  .nav-links li a{
+    display:block;
+    padding:16px 4%;
+    font-size:18px;
+  }
+  .nav-links li a:hover,
+  .nav-links li a:focus-visible{
+    color:var(--teal);
+  }
+}
+
+/* ===== NEW: certificate copies ===== */
+.cert-sub{
+  font-size:24px;
+  margin:50px 0 6px;
+}
+.cert-note{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:20px;
+}
+.cert-gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+.cert-card{
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:var(--card);
+  overflow:hidden;
+}
+.cert-card[hidden]{
+  display:none;
+}
+.cert-img{
+  display:block;
+  background:#fff;
+}
+.cert-img img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.cert-info{
+  padding:18px 20px 22px;
+}
+.cert-info .label{
+  margin-bottom:0;
+}
+.cert-info h4{
+  font-size:18px;
+  margin:10px 0 6px;
+}
+.cert-info p{
+  color:var(--muted);
+  font-size:14px;
+}
+.cert-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  margin-top:14px;
+}
+.cert-links a{
+  color:#5eead4;
+  font-size:14px;
+  font-weight:bold;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+@media(max-width:850px){
+  .cert-gallery{
+    grid-template-columns:1fr;
+  }
+}
+
 /* ===== NEW: how I work ===== */
 .hw-list{
   border-top:1px solid var(--border);
@@ -966,7 +1094,7 @@ footer{
 <nav>
 <a href="#home" class="logo">Aneka<span>.</span></a>
 
-<ul class="nav-links">
+<ul class="nav-links" id="nav-links">
 <li><a href="#about">About</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#projects">Projects</a></li>
@@ -976,6 +1104,10 @@ footer{
 <li><a href="#certificates">Certificates</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
+
+<button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+<span></span><span></span><span></span>
+</button>
 </nav>
 </div>
 </header>
@@ -1296,8 +1428,8 @@ including branding, product presentation and e-commerce store structure.
 
 <div class="media-wide">
 <article class="media-card">
-<video controls playsinline preload="metadata" poster="images/socialboost-ad-poster.jpg">
-<source src="videos/socialboost-ad.mp4" type="video/mp4">
+<video controls playsinline preload="metadata" poster="socialboost-ad-poster.jpg">
+<source src="socialboost-ad.mp4" type="video/mp4">
 </video>
 <div class="media-body">
 <span class="label">Ad</span><span class="label">Google Flow AI</span>
@@ -1306,8 +1438,8 @@ including branding, product presentation and e-commerce store structure.
 </div>
 </article>
 <article class="media-card">
-<video controls playsinline preload="metadata" poster="images/socialboost-ad-2-poster.jpg">
-<source src="videos/socialboost-ad-2.mp4" type="video/mp4">
+<video controls playsinline preload="metadata" poster="socialboost-ad-2-poster.jpg">
+<source src="socialboost-ad-2.mp4" type="video/mp4">
 </video>
 <div class="media-body">
 <span class="label">Ad</span><span class="label">Google Flow AI</span>
@@ -1319,8 +1451,8 @@ including branding, product presentation and e-commerce store structure.
 
 <div class="media-reels">
 <article class="media-card">
-<video controls playsinline preload="metadata" poster="images/socialboost-reel-1-poster.jpg">
-<source src="videos/socialboost-reel-1.mp4" type="video/mp4">
+<video controls playsinline preload="metadata" poster="socialboost-reel-1-poster.jpg">
+<source src="socialboost-reel-1.mp4" type="video/mp4">
 </video>
 <div class="media-body">
 <span class="label">Reel</span><span class="label">Google Flow AI</span>
@@ -1329,8 +1461,8 @@ including branding, product presentation and e-commerce store structure.
 </div>
 </article>
 <article class="media-card">
-<video controls playsinline preload="metadata" poster="images/socialboost-reel-2-poster.jpg">
-<source src="videos/socialboost-reel-2.mp4" type="video/mp4">
+<video controls playsinline preload="metadata" poster="socialboost-reel-2-poster.jpg">
+<source src="socialboost-reel-2.mp4" type="video/mp4">
 </video>
 <div class="media-body">
 <span class="label">Reel</span><span class="label">Google Flow AI</span>
@@ -1351,7 +1483,7 @@ including branding, product presentation and e-commerce store structure.
 <div class="media-wide">
 <article class="media-card">
 <video controls playsinline preload="metadata">
-<source src="videos/zaibozan-ad.mp4#t=0.1" type="video/mp4">
+<source src="zaibozan-ad.mp4#t=0.1" type="video/mp4">
 </video>
 <div class="media-body">
 <span class="label">Ad</span><span class="label">Google Flow AI</span>
@@ -1364,7 +1496,7 @@ including branding, product presentation and e-commerce store structure.
 <div class="media-reels">
 <article class="media-card">
 <video controls playsinline preload="metadata">
-<source src="videos/zaibozan-reel-1.mp4#t=0.1" type="video/mp4">
+<source src="zaibozan-reel-1.mp4#t=0.1" type="video/mp4">
 </video>
 <div class="media-body">
 <span class="label">Reel</span><span class="label">Google Flow AI</span>
@@ -1374,7 +1506,7 @@ including branding, product presentation and e-commerce store structure.
 </article>
 <article class="media-card">
 <video controls playsinline preload="metadata">
-<source src="videos/zaibozan-reel-2.mp4#t=0.1" type="video/mp4">
+<source src="zaibozan-reel-2.mp4#t=0.1" type="video/mp4">
 </video>
 <div class="media-body">
 <span class="label">Reel</span><span class="label">Google Flow AI</span>
@@ -1589,6 +1721,44 @@ including branding, product presentation and e-commerce store structure.
 </div>
 
 </div>
+
+<h3 class="cert-sub">Certificate Copies</h3>
+<p class="cert-note">Original DigiSkills training certificates (Government of Pakistan). Each one can be verified online.</p>
+
+<div class="cert-gallery">
+<article class="cert-card">
+<a class="cert-img" href="certificate-digiskills-digital-marketing.pdf" target="_blank" rel="noopener">
+<img src="certificate-digiskills-digital-marketing.jpg" alt="DigiSkills Digital Marketing training certificate awarded to Aneka Pervez" loading="lazy" onerror="this.closest('.cert-card').hidden=true">
+</a>
+<div class="cert-info">
+<span class="label">Digital Marketing</span>
+<h4>DigiSkills Digital Marketing</h4>
+<p>Training batch: Feb 2020 &ndash; May 2020</p>
+<p>Issued: 4 June 2020</p>
+<p>Certificate ID: 6RVB3JTPQ</p>
+<div class="cert-links">
+<a href="certificate-digiskills-digital-marketing.pdf" target="_blank" rel="noopener">View certificate</a>
+<a href="https://digiskills.pk/verify" target="_blank" rel="noopener">Verify online</a>
+</div>
+</div>
+</article>
+<article class="cert-card">
+<a class="cert-img" href="certificate-digiskills-freelancing.pdf" target="_blank" rel="noopener">
+<img src="certificate-digiskills-freelancing.jpg" alt="DigiSkills Freelancing training certificate awarded to Aneka Pervez" loading="lazy" onerror="this.closest('.cert-card').hidden=true">
+</a>
+<div class="cert-info">
+<span class="label">Freelancing</span>
+<h4>DigiSkills Freelancing</h4>
+<p>Training batch: Aug 2019 &ndash; Oct 2019</p>
+<p>Issued: 12 November 2019</p>
+<p>Certificate ID: 8YVKQ8YPQ</p>
+<div class="cert-links">
+<a href="certificate-digiskills-freelancing.pdf" target="_blank" rel="noopener">View certificate</a>
+<a href="https://digiskills.pk/verify" target="_blank" rel="noopener">Verify online</a>
+</div>
+</div>
+</article>
+</div>
 </div>
 </section>
 
@@ -1771,6 +1941,31 @@ Download CV
     });
   });
   refresh();
+})();
+</script>
+<script>
+(function(){
+  var btn = document.getElementById('menu-btn');
+  var list = document.getElementById('nav-links');
+  if (!btn || !list) return;
+
+  function setOpen(open){
+    list.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  btn.addEventListener('click', function(){
+    setOpen(btn.getAttribute('aria-expanded') !== 'true');
+  });
+  list.addEventListener('click', function(e){
+    if (e.target.closest('a')) setOpen(false);
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') setOpen(false);
+  });
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 900) setOpen(false);
+  });
 })();
 </script>
 <script>
